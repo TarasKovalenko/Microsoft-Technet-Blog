@@ -16,7 +16,9 @@ export class HomePage {
   rootPage = 'FeedListPage';
   feeds: Feed[];
 
-  constructor(private navController: NavController, private feedProvider: FeedProvider, public alertCtrl: AlertController) {
+  constructor(private navController: NavController,
+              private feedProvider: FeedProvider,
+              public alertCtrl: AlertController) {
   }
 
   public addFeed() {
