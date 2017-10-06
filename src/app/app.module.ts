@@ -9,6 +9,12 @@ import {ListPage} from '../pages/list/list';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 
+import {IonicStorageModule} from '@ionic/storage';
+import {HttpModule} from '@angular/http';
+import {InAppBrowser} from '@ionic-native/in-app-browser';
+
+import {FeedProvider} from './../providers/feed/feed';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -17,7 +23,9 @@ import {SplashScreen} from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -28,6 +36,8 @@ import {SplashScreen} from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    FeedProvider,
+    InAppBrowser,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

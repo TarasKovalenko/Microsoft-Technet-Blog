@@ -7,7 +7,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content style="margin: 0;">
+<!--<ion-content style="margin: 0;">
   <ion-list>
 
     <ion-item>
@@ -92,4 +92,15 @@
     </ion-item>
 
   </ion-list>
+</ion-content> -->
+
+<ion-content>
+  <ion-list>
+    <button menuClose ion-item *ngFor="let feed of feeds" (click)="openFeed(feed)">
+      {{feed.title}}
+    </button>
+  </ion-list>
+  <button ion-button full (click)="addFeed()" action secondary>
+    <ion-icon name="add"></ion-icon> Add Feed
+  </button>
 </ion-content>
